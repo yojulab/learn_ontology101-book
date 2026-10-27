@@ -19,6 +19,16 @@ import argparse
 from urllib.parse import quote
 
 import requests
+from pathlib import Path
+try:
+    from dotenv import load_dotenv
+    _env_path = Path(__file__).resolve().parents[1] / ".env"
+    if _env_path.exists():
+        load_dotenv(dotenv_path=_env_path)
+    else:
+        load_dotenv()
+except ImportError:
+    pass
 from rdflib import Graph, Namespace, URIRef, BNode, Literal
 from rdflib.namespace import RDF, RDFS, XSD
 

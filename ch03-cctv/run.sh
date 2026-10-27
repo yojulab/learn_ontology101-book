@@ -17,6 +17,15 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# 프로젝트 루트 .env 환경변수 로드
+ENV_FILE="$(cd .. && pwd)/.env"
+if [ -f "$ENV_FILE" ]; then
+  set -a
+  # shellcheck source=/dev/null
+  source "$ENV_FILE"
+  set +a
+fi
+
 VENV=".venv"
 PY="$VENV/bin/python"
 PIP="$VENV/bin/pip"

@@ -24,15 +24,26 @@ from string import Template
 from typing import List, Optional, Dict, Any
 
 import requests
+from pathlib import Path
+from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama  # 권장 패키지
+
+# ----------------------------
+# 프로젝트 루트 .env 환경변수 로드
+# ----------------------------
+ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
+if ENV_PATH.exists():
+    load_dotenv(dotenv_path=ENV_PATH)
+else:
+    load_dotenv()
 
 # ----------------------------
 # 환경설정
 # ----------------------------
 SPARQL_ENDPOINT = os.environ.get("SPARQL_ENDPOINT", "http://localhost:3030/fc/query")
 GRAPH_IRI       = os.environ.get("GRAPH_IRI",       "http://k.fc/onto")
-OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
+OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://graphrag_agent_ai_ollama:11434")
 OLLAMA_MODEL    = os.environ.get("OLLAMA_MODEL",    "qwen3")  # 로컬 pull 된 모델명
 
 def llm_client() -> ChatOllama:

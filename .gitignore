@@ -1,0 +1,22 @@
+# Environment & Virtualenvs
+.venv/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jena Fuseki & Databases
+fuseki
+ch03-cctv/fuseki
+run/
+*.log
+
+# IDE & OS
+.DS_Store
+.idea/
+.env
+ch01-oag/convert/*.json
+ch01-oag/convert/*.ttl
