@@ -17,9 +17,13 @@
 """
 
 import os
+import sys
 import json
+import time
+import platform
 import argparse
 import re
+from contextlib import contextmanager
 from string import Template
 from typing import List, Optional, Dict, Any
 
@@ -48,6 +52,65 @@ OLLAMA_MODEL    = os.environ.get("OLLAMA_MODEL",    "qwen3")  # 로컬 pull 된 
 
 def llm_client() -> ChatOllama:
     return ChatOllama(model=OLLAMA_MODEL, base_url=OLLAMA_BASE_URL, temperature=0)
+
+# ----------------------------
+# 단계별 모니터링 (stderr 출력)
+# ----------------------------
+MONITOR = True
+_T0 = time.perf_counter()
+STEP_TIMES: List[tuple] = []
+
+def mlog(msg: str = "") -> None:
+    if MONITOR:
+        print(msg, file=sys.stderr, flush=True)
+
+def _rss_mb() -> float:
+    """현재 프로세스 최대 상주 메모리(MB). Linux/macOS 전용(resource 모듈)."""
+    try:
+        import resource
+        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        return rss / (1024 * 1024) if sys.platform == "darwin" else rss / 1024
+    except Exception:
+        return -1.0
+
+@contextmanager
+def step(no: str, title: str, **info):
+    """단계 시작/종료/소요시간 출력. info: 사용 기술·자원 상세. 반환 dict에 결과 상세를 추가 가능."""
+    detail: Dict[str, Any] = {}
+    mlog(f"\n[{no}] ▶ {title}")
+    for k, v in info.items():
+        mlog(f"    - {k}: {v}")
+    t = time.perf_counter()
+    try:
+        yield detail
+    except Exception as e:
+        dt = time.perf_counter() - t
+        STEP_TIMES.append((f"{no} {title}", dt, "FAIL"))
+        mlog(f"[{no}] ✖ 실패 ({dt:.3f}s): {type(e).__name__}: {e}")
+        raise
+    dt = time.perf_counter() - t
+    STEP_TIMES.append((f"{no} {title}", dt, "OK"))
+    for k, v in detail.items():
+        mlog(f"    - {k}: {v}")
+    mlog(f"[{no}] ✔ 완료 ({dt:.3f}s, 최대메모리 {_rss_mb():.1f}MB)")
+
+def llm_stats(msg: Any) -> Dict[str, Any]:
+    """Ollama 응답 메타데이터에서 토큰 수/속도/시간 추출."""
+    md = getattr(msg, "response_metadata", None) or {}
+    um = getattr(msg, "usage_metadata", None) or {}
+    ns = 1e9
+    out: Dict[str, Any] = {}
+    pt = md.get("prompt_eval_count", um.get("input_tokens"))
+    ct = md.get("eval_count", um.get("output_tokens"))
+    if pt is not None: out["입력 토큰"] = pt
+    if ct is not None: out["출력 토큰"] = ct
+    if md.get("total_duration"): out["LLM 총시간"] = f"{md['total_duration']/ns:.2f}s"
+    if md.get("load_duration"):  out["모델 로드"] = f"{md['load_duration']/ns:.2f}s"
+    if md.get("prompt_eval_duration"): out["프롬프트 평가"] = f"{md['prompt_eval_duration']/ns:.2f}s"
+    if md.get("eval_duration"):
+        out["생성"] = f"{md['eval_duration']/ns:.2f}s"
+        if ct: out["생성 속도"] = f"{ct/(md['eval_duration']/ns):.1f} tok/s"
+    return out
 
 # ----------------------------
 # SPARQL 템플릿
@@ -108,6 +171,7 @@ LIMIT ${LIMIT}
 # SPARQL 호출
 # ----------------------------
 def call_sparql(query: str) -> Dict[str, Any]:
+    t = time.perf_counter()
     r = requests.post(
         SPARQL_ENDPOINT,
         data={"query": query},
@@ -115,7 +179,11 @@ def call_sparql(query: str) -> Dict[str, Any]:
         timeout=30,
     )
     r.raise_for_status()
-    return r.json()
+    js = r.json()
+    n = len(js.get("results", {}).get("bindings", []))
+    mlog(f"    · SPARQL HTTP {r.status_code} | 요청 {len(query)}자 | 응답 {len(r.content)}B | "
+         f"{n}행 | {time.perf_counter()-t:.3f}s")
+    return js
 
 def resolve_place_iri(place_label: str) -> Optional[str]:
     q = RESOLVE_PLACE_BY_LABEL.substitute(GRAPH=GRAPH_IRI, LABEL=place_label)
@@ -164,7 +232,7 @@ def _extract_json_snippet(text: str) -> str:
 
 def _fallback_intent_from_question(q: str) -> Dict[str, Any]:
     # 매우 간단한 규칙: '가장|최고|피크' → peak_time, 아니면 list_by_level
-    place = re.search(r"([ㄱ-ㅎ가-힣A-Za-z0-9]+역)", q)
+    place = re.search(r"([ㄱ-ㅎ가-힣A-Za-z0-9·_]+역)", q)
     place_label = place.group(1) if place else "강남역"
     if re.search(r"(가장|최고|피크|peak|max)", q):
         return {"task": "peak_time", "place_label": place_label, "limit": 1}
@@ -174,6 +242,8 @@ def parse_intent(question: str) -> Dict[str, Any]:
     llm = llm_client()
     messages = intent_prompt.format_messages(question=question, schema=INTENT_SCHEMA_TXT)
     out = llm.invoke(messages)
+    for k, v in llm_stats(out).items():
+        mlog(f"    · {k}: {v}")
     raw = (out.content or "").strip()
     # 1차 직접
     try:
@@ -266,14 +336,42 @@ def render_answer(task: str, place_label: str, level: Optional[str],
         result_json=json.dumps(result_obj, ensure_ascii=False)
     )
     out = llm.invoke(messages)
+    for k, v in llm_stats(out).items():
+        mlog(f"    · {k}: {v}")
     return out.content
 
 # ----------------------------
 # 엔드투엔드
 # ----------------------------
+def print_env_banner(question: str) -> None:
+    mlog("=" * 64)
+    mlog(" ask_query 실행 모니터링")
+    mlog("=" * 64)
+    mlog(f" 질문           : {question}")
+    mlog(f" 런타임         : Python {platform.python_version()} / {platform.system()} {platform.release()} / CPU {os.cpu_count()}코어")
+    mlog(f" LLM            : Ollama `{OLLAMA_MODEL}` @ {OLLAMA_BASE_URL} (LangChain ChatOllama, temperature=0)")
+    mlog(f" 트리플스토어   : Apache Jena Fuseki SPARQL @ {SPARQL_ENDPOINT}")
+    mlog(f" Named Graph    : {GRAPH_IRI}")
+    mlog(f" .env           : {ENV_PATH if ENV_PATH.exists() else '없음(기본 load_dotenv)'}")
+
+def print_summary(total: float) -> None:
+    mlog("\n" + "=" * 64)
+    mlog(" 단계별 소요시간 요약")
+    mlog("-" * 64)
+    for name, dt, st in STEP_TIMES:
+        pct = (dt / total * 100) if total else 0
+        mlog(f" {st:<4} {name:<34} {dt:8.3f}s {pct:5.1f}% {'█' * int(pct / 5)}")
+    mlog("-" * 64)
+    mlog(f" 총 소요시간 {total:.3f}s | 최대메모리 {_rss_mb():.1f}MB")
+    mlog("=" * 64 + "\n")
+
 def answer_question(question: str) -> str:
     # 1) 의도/파라미터/작업유형
-    intent = parse_intent(question)
+    with step("1/4", "의도·파라미터 추출 (LLM ①)",
+              기술="LangChain ChatPromptTemplate + ChatOllama + JSON 파싱(4단계 폴백)",
+              모델=OLLAMA_MODEL, 엔드포인트=OLLAMA_BASE_URL) as d:
+        intent = parse_intent(question)
+        d["추출 결과"] = json.dumps(intent, ensure_ascii=False)
     task       = intent.get("task", "list_by_level")
     place_lbl  = intent.get("place_label", "강남역")
     level      = intent.get("level")
@@ -282,21 +380,33 @@ def answer_question(question: str) -> str:
     limit      = intent.get("limit", 1)
 
     # 2) 라벨→IRI
-    place_iri = resolve_place_iri(place_lbl)
+    with step("2/4", "장소 라벨 → IRI 해석",
+              기술="SPARQL SELECT (requests.post)", 대상=SPARQL_ENDPOINT,
+              라벨=place_lbl) as d:
+        place_iri = resolve_place_iri(place_lbl)
+        d["IRI"] = place_iri or "찾지 못함"
     if not place_iri:
         return f"{place_lbl} 라벨에 해당하는 장소를 찾지 못했습니다."
 
     # 3) SPARQL 실행
-    if task == "peak_time":
-        result = query_peak_time(place_iri, start_iso, end_iso, level, limit)
-    else:
-        # 기본: list_by_level (level 없으면 '붐빔'을 기본으로 보정)
-        lvl = level or "붐빔"
-        times = query_times_by_level(place_iri, lvl, start_iso, end_iso)
-        result = times
+    with step("3/4", f"SPARQL 질의 실행 (task={task})",
+              기술="SPARQL 템플릿(string.Template)", 그래프=GRAPH_IRI,
+              level=level, 기간=f"{start_iso}~{end_iso}" if start_iso and end_iso else "지정 없음") as d:
+        if task == "peak_time":
+            result = query_peak_time(place_iri, start_iso, end_iso, level, limit)
+        else:
+            # 기본: list_by_level (level 없으면 '붐빔'을 기본으로 보정)
+            lvl = level or "붐빔"
+            times = query_times_by_level(place_iri, lvl, start_iso, end_iso)
+            result = times
+        d["결과 건수"] = len(result)
 
     # 4) LLM 서술
-    return render_answer(task, place_lbl, level, start_iso, end_iso, result)
+    with step("4/4", "결과 한국어 서술 (LLM ②)",
+              기술="LangChain ChatPromptTemplate + ChatOllama", 모델=OLLAMA_MODEL,
+              입력데이터=f"{len(json.dumps(result, ensure_ascii=False))}자 JSON"):
+        answer = render_answer(task, place_lbl, level, start_iso, end_iso, result)
+    return answer
 
 # ----------------------------
 # CLI
@@ -308,6 +418,7 @@ if __name__ == "__main__":
     parser.add_argument("--graph-iri", default=GRAPH_IRI)
     parser.add_argument("--ollama-base", default=OLLAMA_BASE_URL)
     parser.add_argument("--ollama-model", default=OLLAMA_MODEL)
+    parser.add_argument("--quiet", action="store_true", help="단계별 모니터링 출력 끄기")
     args = parser.parse_args()
 
     # 실행 중 덮어쓰기 허용
@@ -315,6 +426,13 @@ if __name__ == "__main__":
     GRAPH_IRI       = args.graph_iri
     OLLAMA_BASE_URL = args.ollama_base
     OLLAMA_MODEL    = args.ollama_model
+    MONITOR         = not args.quiet
 
-    print(answer_question(args.question))
+    print_env_banner(args.question)
+    _start = time.perf_counter()
+    try:
+        _ans = answer_question(args.question)
+    finally:
+        print_summary(time.perf_counter() - _start)
+    print(_ans)
 

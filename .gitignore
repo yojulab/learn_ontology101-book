@@ -18,5 +18,3 @@ run/
 .DS_Store
 .idea/
 .env
-ch01-oag/convert/*.json
-ch01-oag/convert/*.ttl

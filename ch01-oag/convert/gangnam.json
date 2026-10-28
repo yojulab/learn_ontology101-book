@@ -1,1 +1,396 @@
-{"SeoulRtd.citydata_ppltn":[{"AREA_NM":"강남역","AREA_CD":"POI014","AREA_CONGEST_LVL":"약간 붐빔","AREA_CONGEST_MSG":"사람들이 몰려있을 가능성이 크고 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.","AREA_PPLTN_MIN":"68000","AREA_PPLTN_MAX":"70000","MALE_PPLTN_RATE":"49.3","FEMALE_PPLTN_RATE":"50.7","PPLTN_RATE_0":"1.2","PPLTN_RATE_10":"3.3","PPLTN_RATE_20":"21.5","PPLTN_RATE_30":"26.6","PPLTN_RATE_40":"21.8","PPLTN_RATE_50":"14.3","PPLTN_RATE_60":"6.8","PPLTN_RATE_70":"4.5","RESNT_PPLTN_RATE":"54.2","NON_RESNT_PPLTN_RATE":"45.8","REPLACE_YN":"N","PPLTN_TIME":"2026-10-27 11:10","FCST_YN":"Y","FCST_PPLTN":[{"FCST_TIME":"2026-10-27 12:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"72000","FCST_PPLTN_MAX":"74000"},{"FCST_TIME":"2026-10-27 13:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"76000","FCST_PPLTN_MAX":"78000"},{"FCST_TIME":"2026-10-27 14:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"76000","FCST_PPLTN_MAX":"78000"},{"FCST_TIME":"2026-10-27 15:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"76000","FCST_PPLTN_MAX":"78000"},{"FCST_TIME":"2026-10-27 16:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"76000","FCST_PPLTN_MAX":"78000"},{"FCST_TIME":"2026-10-27 17:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"74000","FCST_PPLTN_MAX":"76000"},{"FCST_TIME":"2026-10-27 18:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"72000","FCST_PPLTN_MAX":"74000"},{"FCST_TIME":"2026-10-27 19:00","FCST_CONGEST_LVL":"약간 붐빔","FCST_PPLTN_MIN":"68000","FCST_PPLTN_MAX":"70000"},{"FCST_TIME":"2026-10-27 20:00","FCST_CONGEST_LVL":"보통","FCST_PPLTN_MIN":"58000","FCST_PPLTN_MAX":"60000"},{"FCST_TIME":"2026-10-27 21:00","FCST_CONGEST_LVL":"보통","FCST_PPLTN_MIN":"50000","FCST_PPLTN_MAX":"52000"},{"FCST_TIME":"2026-10-27 22:00","FCST_CONGEST_LVL":"여유","FCST_PPLTN_MIN":"42000","FCST_PPLTN_MAX":"44000"},{"FCST_TIME":"2026-10-27 23:00","FCST_CONGEST_LVL":"여유","FCST_PPLTN_MIN":"30000","FCST_PPLTN_MAX":"32000"}]}],"RESULT":{"RESULT.CODE":"INFO-000","RESULT.MESSAGE":"정상 처리되었습니다."}}
+{
+  "SeoulRtd.citydata_ppltn": [
+    {
+      "AREA_NM": "강남역",
+      "AREA_CD": "POI014",
+      "AREA_CONGEST_LVL": "보통",
+      "AREA_CONGEST_MSG": "사람이 몰려있을 수 있지만 크게 붐비지는 않아요. 도보 이동에 큰 제약이 없어요.",
+      "AREA_PPLTN_MIN": "54000",
+      "AREA_PPLTN_MAX": "56000",
+      "MALE_PPLTN_RATE": "51.1",
+      "FEMALE_PPLTN_RATE": "48.9",
+      "PPLTN_RATE_0": "1.2",
+      "PPLTN_RATE_10": "6.4",
+      "PPLTN_RATE_20": "29.5",
+      "PPLTN_RATE_30": "25.1",
+      "PPLTN_RATE_40": "17.8",
+      "PPLTN_RATE_50": "11.4",
+      "PPLTN_RATE_60": "5.1",
+      "PPLTN_RATE_70": "3.5",
+      "RESNT_PPLTN_RATE": "31.9",
+      "NON_RESNT_PPLTN_RATE": "68.1",
+      "REPLACE_YN": "N",
+      "PPLTN_TIME": "2026-10-28 20:55",
+      "FCST_YN": "Y",
+      "FCST_PPLTN": [
+        {
+          "FCST_TIME": "2026-10-28 22:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "48000",
+          "FCST_PPLTN_MAX": "50000"
+        },
+        {
+          "FCST_TIME": "2026-10-28 23:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "36000",
+          "FCST_PPLTN_MAX": "38000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 00:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "26000",
+          "FCST_PPLTN_MAX": "28000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 01:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "22000",
+          "FCST_PPLTN_MAX": "24000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 02:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "20000",
+          "FCST_PPLTN_MAX": "22000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 03:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "20000",
+          "FCST_PPLTN_MAX": "22000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 04:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 05:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 06:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 07:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "22000",
+          "FCST_PPLTN_MAX": "24000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 08:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "36000",
+          "FCST_PPLTN_MAX": "38000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 09:00",
+          "FCST_CONGEST_LVL": "보통",
+          "FCST_PPLTN_MIN": "54000",
+          "FCST_PPLTN_MAX": "56000"
+        }
+      ]
+    },
+    {
+      "AREA_NM": "역삼역",
+      "AREA_CD": "POI042",
+      "AREA_CONGEST_LVL": "여유",
+      "AREA_CONGEST_MSG": "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요.",
+      "AREA_PPLTN_MIN": "20000",
+      "AREA_PPLTN_MAX": "22000",
+      "MALE_PPLTN_RATE": "53.8",
+      "FEMALE_PPLTN_RATE": "46.2",
+      "PPLTN_RATE_0": "1.3",
+      "PPLTN_RATE_10": "3.9",
+      "PPLTN_RATE_20": "20.3",
+      "PPLTN_RATE_30": "25.8",
+      "PPLTN_RATE_40": "22.3",
+      "PPLTN_RATE_50": "15.0",
+      "PPLTN_RATE_60": "6.8",
+      "PPLTN_RATE_70": "4.7",
+      "RESNT_PPLTN_RATE": "43.1",
+      "NON_RESNT_PPLTN_RATE": "56.9",
+      "REPLACE_YN": "N",
+      "PPLTN_TIME": "2026-10-28 20:55",
+      "FCST_YN": "Y",
+      "FCST_PPLTN": [
+        {
+          "FCST_TIME": "2026-10-28 22:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-28 23:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 00:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "14000",
+          "FCST_PPLTN_MAX": "16000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 01:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "12000",
+          "FCST_PPLTN_MAX": "14000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 02:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "12000",
+          "FCST_PPLTN_MAX": "14000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 03:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "10000",
+          "FCST_PPLTN_MAX": "12000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 04:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "10000",
+          "FCST_PPLTN_MAX": "12000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 05:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "10000",
+          "FCST_PPLTN_MAX": "12000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 06:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "10000",
+          "FCST_PPLTN_MAX": "12000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 07:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "12000",
+          "FCST_PPLTN_MAX": "14000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 08:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "20000",
+          "FCST_PPLTN_MAX": "22000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 09:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "32000",
+          "FCST_PPLTN_MAX": "34000"
+        }
+      ]
+    },
+    {
+      "AREA_NM": "선릉역",
+      "AREA_CD": "POI034",
+      "AREA_CONGEST_LVL": "여유",
+      "AREA_CONGEST_MSG": "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요.",
+      "AREA_PPLTN_MIN": "32000",
+      "AREA_PPLTN_MAX": "34000",
+      "MALE_PPLTN_RATE": "52.7",
+      "FEMALE_PPLTN_RATE": "47.3",
+      "PPLTN_RATE_0": "1.6",
+      "PPLTN_RATE_10": "9.5",
+      "PPLTN_RATE_20": "16.2",
+      "PPLTN_RATE_30": "21.3",
+      "PPLTN_RATE_40": "22.3",
+      "PPLTN_RATE_50": "16.5",
+      "PPLTN_RATE_60": "7.6",
+      "PPLTN_RATE_70": "4.9",
+      "RESNT_PPLTN_RATE": "41.4",
+      "NON_RESNT_PPLTN_RATE": "58.6",
+      "REPLACE_YN": "N",
+      "PPLTN_TIME": "2026-10-28 20:55",
+      "FCST_YN": "Y",
+      "FCST_PPLTN": [
+        {
+          "FCST_TIME": "2026-10-28 22:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "28000",
+          "FCST_PPLTN_MAX": "30000"
+        },
+        {
+          "FCST_TIME": "2026-10-28 23:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "22000",
+          "FCST_PPLTN_MAX": "24000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 00:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 01:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 02:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 03:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "14000",
+          "FCST_PPLTN_MAX": "16000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 04:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "14000",
+          "FCST_PPLTN_MAX": "16000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 05:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "14000",
+          "FCST_PPLTN_MAX": "16000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 06:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "14000",
+          "FCST_PPLTN_MAX": "16000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 07:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "18000",
+          "FCST_PPLTN_MAX": "20000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 08:00",
+          "FCST_CONGEST_LVL": "여유",
+          "FCST_PPLTN_MIN": "28000",
+          "FCST_PPLTN_MAX": "30000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 09:00",
+          "FCST_CONGEST_LVL": "보통",
+          "FCST_PPLTN_MIN": "44000",
+          "FCST_PPLTN_MAX": "46000"
+        }
+      ]
+    },
+    {
+      "AREA_NM": "대림역",
+      "AREA_CD": "POI023",
+      "AREA_CONGEST_LVL": "여유",
+      "AREA_CONGEST_MSG": "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요.",
+      "AREA_PPLTN_MIN": "16000",
+      "AREA_PPLTN_MAX": "18000",
+      "MALE_PPLTN_RATE": "50.2",
+      "FEMALE_PPLTN_RATE": "49.8",
+      "PPLTN_RATE_0": "2.1",
+      "PPLTN_RATE_10": "4.6",
+      "PPLTN_RATE_20": "11.0",
+      "PPLTN_RATE_30": "13.5",
+      "PPLTN_RATE_40": "13.9",
+      "PPLTN_RATE_50": "20.8",
+      "PPLTN_RATE_60": "19.4",
+      "PPLTN_RATE_70": "14.7",
+      "RESNT_PPLTN_RATE": "75.7",
+      "NON_RESNT_PPLTN_RATE": "24.3",
+      "REPLACE_YN": "N",
+      "PPLTN_TIME": "2026-10-28 20:55",
+      "FCST_YN": "Y",
+      "FCST_PPLTN": [
+        {
+          "FCST_TIME": "2026-10-28 22:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-28 23:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 00:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 01:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 02:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 03:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 04:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 05:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 06:00",
+          "FCST_CONGEST_LVL": "약간 붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 07:00",
+          "FCST_CONGEST_LVL": "보통",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 08:00",
+          "FCST_CONGEST_LVL": "붐빔",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        },
+        {
+          "FCST_TIME": "2026-10-29 09:00",
+          "FCST_CONGEST_LVL": "보통",
+          "FCST_PPLTN_MIN": "16000",
+          "FCST_PPLTN_MAX": "18000"
+        }
+      ]
+    }
+  ],
+  "RESULT": {
+    "RESULT.CODE": "INFO-000",
+    "RESULT.MESSAGE": "정상 처리되었습니다. (총 4개 지역)"
+  }
+}
