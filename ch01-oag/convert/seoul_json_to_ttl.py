@@ -246,7 +246,11 @@ def main():
     default_input_file = (
         os.path.join(script_dir, "seoul_ppltn.json")
         if os.path.exists(os.path.join(script_dir, "seoul_ppltn.json"))
-        else os.path.join(script_dir, "gangnam.json")
+        else (
+            os.path.join(script_dir, "compat.json")
+            if os.path.exists(os.path.join(script_dir, "compat.json"))
+            else os.path.join(script_dir, "gangnam.json")
+        )
     )
     default_output_file = os.path.join(script_dir, "seoul_ppltn.ttl")
 
@@ -348,8 +352,11 @@ def main():
     with open(args.output, "w", encoding="utf-8") as f:
         f.write(g.serialize(format="turtle"))
 
-    # 하위 호환용 gangnam.ttl 동기화 (기존 튜토리얼 스크립트와의 호환)
+    # 하위 호환용 compat.ttl 및 gangnam.ttl 동기화
     output_dir = os.path.dirname(os.path.abspath(args.output))
+    compat_ttl = os.path.join(output_dir, "compat.ttl")
+    if os.path.abspath(args.output) != compat_ttl:
+        shutil.copyfile(args.output, compat_ttl)
     gangnam_ttl = os.path.join(output_dir, "gangnam.ttl")
     if os.path.abspath(args.output) != gangnam_ttl:
         shutil.copyfile(args.output, gangnam_ttl)
@@ -361,7 +368,7 @@ def main():
     print(f"  - 총 예측 데이터: {total_forecasts}개")
     print(f"  - 총 RDF 트리플: {len(g)}개")
     print(f"  - 메인 출력 파일: {args.output}")
-    print(f"  - 하위 호환 파일: {gangnam_ttl}")
+    print(f"  - 하위 호환 파일: {compat_ttl} (및 gangnam.ttl)")
 
 if __name__ == "__main__":
     main()

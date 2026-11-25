@@ -218,7 +218,7 @@ fi
 
 # 수집 결과 통합 JSON 파일 및 하위 호환용 JSON 파일
 OUTPUT_JSON="${SCRIPT_DIR}/seoul_ppltn.json"
-COMPAT_JSON="${SCRIPT_DIR}/gangnam.json"
+COMPAT_JSON="${SCRIPT_DIR}/compat.json"
 
 python3 -c "
 import json, sys
@@ -248,9 +248,17 @@ result_payload = {
 with open('${OUTPUT_JSON}', 'w', encoding='utf-8') as f:
     json.dump(result_payload, f, ensure_ascii=False, indent=2)
 
-# 2) 하위 호환용 gangnam.json 파일 동기화 (기존 튜토리얼 스크립트 호환용, 모든 수집 지역 포함)
+# 2) 하위 호환용 compat.json 파일 동기화 (모든 수집 지역 포함)
 with open('${COMPAT_JSON}', 'w', encoding='utf-8') as f:
     json.dump(result_payload, f, ensure_ascii=False, indent=2)
+
+# 3) 레거시 gangnam.json 동기화
+gangnam_json = '${SCRIPT_DIR}/gangnam.json'
+try:
+    with open(gangnam_json, 'w', encoding='utf-8') as f:
+        json.dump(result_payload, f, ensure_ascii=False, indent=2)
+except Exception:
+    pass
 " "${SUCCESS_FILES[@]}"
 
 rm -rf "${TEMP_DIR}"
@@ -259,7 +267,7 @@ echo ""
 echo "================================================================================"
 echo "[SUCCESS] 복합 지역 실시간 인구 데이터 수집 완료 (${SUCCESS_COUNT}/${TOTAL_REQ}개 성공)"
 echo "  - 메인 통합 JSON: ${OUTPUT_JSON} (총 ${SUCCESS_COUNT}개 지역 포함)"
-echo "  - 하위 호환 JSON: ${COMPAT_JSON} (동일 복수 데이터 동기화)"
+echo "  - 하위 호환 JSON: ${COMPAT_JSON} (및 gangnam.json)"
 if [ ${#FAIL_NAMES[@]} -gt 0 ]; then
   echo "  - 제외된 지역:   ${FAIL_NAMES[*]}"
   echo "  - 팁: 지원되는 핫스팟 목록은 '$0 --list' 또는 '$0 --search <단어>'로 확인하세요."

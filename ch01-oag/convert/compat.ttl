@@ -1,0 +1,608 @@
+@prefix : <http://k.fc/onto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:aboutPlace rdfs:label "about place" .
+
+:areaCode rdfs:label "area code" .
+
+:asOf rdfs:label "as of time" .
+
+:congestionMessage rdfs:label "congestion message" .
+
+:femaleRate rdfs:label "female rate" .
+
+:forPlace rdfs:label "for place" .
+
+:forecastCongestionLevel rdfs:label "forecast congestion level" .
+
+:forecastPopulationMax rdfs:label "forecast population max" .
+
+:forecastPopulationMin rdfs:label "forecast population min" .
+
+:forecastTime rdfs:label "forecast time" .
+
+:forecast_POI014_20261028T230000 a :Forecast ;
+    rdfs:label "강남역 2026-10-28 23:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 42000 ;
+    :forecastPopulationMin 40000 ;
+    :forecastTime "2026-10-28T23:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261028T230000" .
+
+:forecast_POI014_20261029T000000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 00:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 32000 ;
+    :forecastPopulationMin 30000 ;
+    :forecastTime "2026-10-29T00:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T000000" .
+
+:forecast_POI014_20261029T010000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 01:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 24000 ;
+    :forecastPopulationMin 22000 ;
+    :forecastTime "2026-10-29T01:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T010000" .
+
+:forecast_POI014_20261029T020000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 02:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 22000 ;
+    :forecastPopulationMin 20000 ;
+    :forecastTime "2026-10-29T02:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T020000" .
+
+:forecast_POI014_20261029T030000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 03:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 22000 ;
+    :forecastPopulationMin 20000 ;
+    :forecastTime "2026-10-29T03:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T030000" .
+
+:forecast_POI014_20261029T040000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 04:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 20000 ;
+    :forecastPopulationMin 18000 ;
+    :forecastTime "2026-10-29T04:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T040000" .
+
+:forecast_POI014_20261029T050000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 05:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 20000 ;
+    :forecastPopulationMin 18000 ;
+    :forecastTime "2026-10-29T05:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T050000" .
+
+:forecast_POI014_20261029T060000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 06:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 20000 ;
+    :forecastPopulationMin 18000 ;
+    :forecastTime "2026-10-29T06:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T060000" .
+
+:forecast_POI014_20261029T070000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 07:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 22000 ;
+    :forecastPopulationMin 20000 ;
+    :forecastTime "2026-10-29T07:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T070000" .
+
+:forecast_POI014_20261029T080000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 08:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 32000 ;
+    :forecastPopulationMin 30000 ;
+    :forecastTime "2026-10-29T08:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T080000" .
+
+:forecast_POI014_20261029T090000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 09:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 50000 ;
+    :forecastPopulationMin 48000 ;
+    :forecastTime "2026-10-29T09:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T090000" .
+
+:forecast_POI014_20261029T100000 a :Forecast ;
+    rdfs:label "강남역 2026-10-29 10:00 예측"@ko ;
+    :forPlace :place_POI014 ;
+    :forecastCongestionLevel "보통" ;
+    :forecastPopulationMax 64000 ;
+    :forecastPopulationMin 62000 ;
+    :forecastTime "2026-10-29T10:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI014_20261029T100000" .
+
+:forecast_POI023_20261028T230000 a :Forecast ;
+    rdfs:label "대림역 2026-10-28 23:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-28T23:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261028T230000" .
+
+:forecast_POI023_20261029T000000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 00:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T00:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T000000" .
+
+:forecast_POI023_20261029T010000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 01:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T01:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T010000" .
+
+:forecast_POI023_20261029T020000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 02:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T02:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T020000" .
+
+:forecast_POI023_20261029T030000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 03:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T03:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T030000" .
+
+:forecast_POI023_20261029T040000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 04:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T04:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T040000" .
+
+:forecast_POI023_20261029T050000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 05:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T05:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T050000" .
+
+:forecast_POI023_20261029T060000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 06:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T06:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T060000" .
+
+:forecast_POI023_20261029T070000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 07:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "보통" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T07:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T070000" .
+
+:forecast_POI023_20261029T080000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 08:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T08:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T080000" .
+
+:forecast_POI023_20261029T090000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 09:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "붐빔" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T09:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T090000" .
+
+:forecast_POI023_20261029T100000 a :Forecast ;
+    rdfs:label "대림역 2026-10-29 10:00 예측"@ko ;
+    :forPlace :place_POI023 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 16000 ;
+    :forecastPopulationMin 14000 ;
+    :forecastTime "2026-10-29T10:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI023_20261029T100000" .
+
+:forecast_POI034_20261028T230000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-28 23:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 26000 ;
+    :forecastPopulationMin 24000 ;
+    :forecastTime "2026-10-28T23:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261028T230000" .
+
+:forecast_POI034_20261029T000000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 00:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 22000 ;
+    :forecastPopulationMin 20000 ;
+    :forecastTime "2026-10-29T00:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T000000" .
+
+:forecast_POI034_20261029T010000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 01:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 20000 ;
+    :forecastPopulationMin 18000 ;
+    :forecastTime "2026-10-29T01:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T010000" .
+
+:forecast_POI034_20261029T020000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 02:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T02:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T020000" .
+
+:forecast_POI034_20261029T030000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 03:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T03:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T030000" .
+
+:forecast_POI034_20261029T040000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 04:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T04:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T040000" .
+
+:forecast_POI034_20261029T050000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 05:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 16000 ;
+    :forecastPopulationMin 14000 ;
+    :forecastTime "2026-10-29T05:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T050000" .
+
+:forecast_POI034_20261029T060000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 06:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 16000 ;
+    :forecastPopulationMin 14000 ;
+    :forecastTime "2026-10-29T06:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T060000" .
+
+:forecast_POI034_20261029T070000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 07:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T07:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T070000" .
+
+:forecast_POI034_20261029T080000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 08:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 24000 ;
+    :forecastPopulationMin 22000 ;
+    :forecastTime "2026-10-29T08:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T080000" .
+
+:forecast_POI034_20261029T090000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 09:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "보통" ;
+    :forecastPopulationMax 40000 ;
+    :forecastPopulationMin 38000 ;
+    :forecastTime "2026-10-29T09:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T090000" .
+
+:forecast_POI034_20261029T100000 a :Forecast ;
+    rdfs:label "선릉역 2026-10-29 10:00 예측"@ko ;
+    :forPlace :place_POI034 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 54000 ;
+    :forecastPopulationMin 52000 ;
+    :forecastTime "2026-10-29T10:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI034_20261029T100000" .
+
+:forecast_POI042_20261028T230000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-28 23:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-28T23:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261028T230000" .
+
+:forecast_POI042_20261029T000000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 00:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 16000 ;
+    :forecastPopulationMin 14000 ;
+    :forecastTime "2026-10-29T00:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T000000" .
+
+:forecast_POI042_20261029T010000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 01:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 14000 ;
+    :forecastPopulationMin 12000 ;
+    :forecastTime "2026-10-29T01:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T010000" .
+
+:forecast_POI042_20261029T020000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 02:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 14000 ;
+    :forecastPopulationMin 12000 ;
+    :forecastTime "2026-10-29T02:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T020000" .
+
+:forecast_POI042_20261029T030000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 03:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 14000 ;
+    :forecastPopulationMin 12000 ;
+    :forecastTime "2026-10-29T03:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T030000" .
+
+:forecast_POI042_20261029T040000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 04:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 12000 ;
+    :forecastPopulationMin 10000 ;
+    :forecastTime "2026-10-29T04:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T040000" .
+
+:forecast_POI042_20261029T050000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 05:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 12000 ;
+    :forecastPopulationMin 10000 ;
+    :forecastTime "2026-10-29T05:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T050000" .
+
+:forecast_POI042_20261029T060000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 06:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 12000 ;
+    :forecastPopulationMin 10000 ;
+    :forecastTime "2026-10-29T06:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T060000" .
+
+:forecast_POI042_20261029T070000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 07:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 14000 ;
+    :forecastPopulationMin 12000 ;
+    :forecastTime "2026-10-29T07:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T070000" .
+
+:forecast_POI042_20261029T080000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 08:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "여유" ;
+    :forecastPopulationMax 18000 ;
+    :forecastPopulationMin 16000 ;
+    :forecastTime "2026-10-29T08:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T080000" .
+
+:forecast_POI042_20261029T090000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 09:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "보통" ;
+    :forecastPopulationMax 28000 ;
+    :forecastPopulationMin 26000 ;
+    :forecastTime "2026-10-29T09:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T090000" .
+
+:forecast_POI042_20261029T100000 a :Forecast ;
+    rdfs:label "역삼역 2026-10-29 10:00 예측"@ko ;
+    :forPlace :place_POI042 ;
+    :forecastCongestionLevel "약간 붐빔" ;
+    :forecastPopulationMax 38000 ;
+    :forecastPopulationMin 36000 ;
+    :forecastTime "2026-10-29T10:00:00"^^xsd:dateTime ;
+    :iri "http://k.fc/onto#forecast_POI042_20261029T100000" .
+
+:hasCongestionLevel rdfs:label "congestion level" .
+
+:hasForecast rdfs:label "has forecast flag" .
+
+:iri rdfs:label "string form of IRI" .
+
+:maleRate rdfs:label "male rate" .
+
+:nonResidentRate rdfs:label "non-resident rate" .
+
+:populationMax rdfs:label "population max" .
+
+:populationMin rdfs:label "population min" .
+
+:replace rdfs:label "replace flag" .
+
+:residentRate rdfs:label "resident rate" .
+
+:response_POI014_20261028T213000 a :Response ;
+    :aboutPlace :place_POI014 ;
+    :iri "http://k.fc/onto#response_POI014_20261028T213000" ;
+    :resultCode "INFO-000" ;
+    :resultMessage "정상 처리되었습니다. (총 4개 지역)" .
+
+:response_POI023_20261028T213000 a :Response ;
+    :aboutPlace :place_POI023 ;
+    :iri "http://k.fc/onto#response_POI023_20261028T213000" ;
+    :resultCode "INFO-000" ;
+    :resultMessage "정상 처리되었습니다. (총 4개 지역)" .
+
+:response_POI034_20261028T213000 a :Response ;
+    :aboutPlace :place_POI034 ;
+    :iri "http://k.fc/onto#response_POI034_20261028T213000" ;
+    :resultCode "INFO-000" ;
+    :resultMessage "정상 처리되었습니다. (총 4개 지역)" .
+
+:response_POI042_20261028T213000 a :Response ;
+    :aboutPlace :place_POI042 ;
+    :iri "http://k.fc/onto#response_POI042_20261028T213000" ;
+    :resultCode "INFO-000" ;
+    :resultMessage "정상 처리되었습니다. (총 4개 지역)" .
+
+:resultCode rdfs:label "result code" .
+
+:resultMessage rdfs:label "result message" .
+
+:Place rdfs:label "Place" .
+
+:Response rdfs:label "Response" .
+
+:place_POI014 a :Place ;
+    rdfs:label "강남역"@ko ;
+    :ageRate_0 1.3 ;
+    :ageRate_10 6.6 ;
+    :ageRate_20 29.2 ;
+    :ageRate_30 24.8 ;
+    :ageRate_40 17.8 ;
+    :ageRate_50 11.5 ;
+    :ageRate_60 5.2 ;
+    :ageRate_70 3.7 ;
+    :areaCode "POI014" ;
+    :asOf "2026-10-28T21:30:00"^^xsd:dateTime ;
+    :attr_area_nm "강남역" ;
+    :congestionMessage "사람이 몰려있을 수 있지만 크게 붐비지는 않아요. 도보 이동에 큰 제약이 없어요." ;
+    :femaleRate 48.5 ;
+    :hasCongestionLevel "보통" ;
+    :hasForecast true ;
+    :iri "http://k.fc/onto#place_POI014" ;
+    :maleRate 51.5 ;
+    :nonResidentRate 66.4 ;
+    :populationMax 50000 ;
+    :populationMin 48000 ;
+    :replace false ;
+    :residentRate 33.6 .
+
+:place_POI023 a :Place ;
+    rdfs:label "대림역"@ko ;
+    :ageRate_0 2.1 ;
+    :ageRate_10 4.7 ;
+    :ageRate_20 11.1 ;
+    :ageRate_30 13.5 ;
+    :ageRate_40 14.0 ;
+    :ageRate_50 20.8 ;
+    :ageRate_60 19.3 ;
+    :ageRate_70 14.5 ;
+    :areaCode "POI023" ;
+    :asOf "2026-10-28T21:30:00"^^xsd:dateTime ;
+    :attr_area_nm "대림역" ;
+    :congestionMessage "사람이 몰려있을 수 있지만 크게 붐비지는 않아요. 도보 이동에 큰 제약이 없어요." ;
+    :femaleRate 49.9 ;
+    :hasCongestionLevel "보통" ;
+    :hasForecast true ;
+    :iri "http://k.fc/onto#place_POI023" ;
+    :maleRate 50.1 ;
+    :nonResidentRate 22.8 ;
+    :populationMax 18000 ;
+    :populationMin 16000 ;
+    :replace false ;
+    :residentRate 77.2 .
+
+:place_POI034 a :Place ;
+    rdfs:label "선릉역"@ko ;
+    :ageRate_0 1.6 ;
+    :ageRate_10 9.7 ;
+    :ageRate_20 16.4 ;
+    :ageRate_30 20.7 ;
+    :ageRate_40 22.3 ;
+    :ageRate_50 16.8 ;
+    :ageRate_60 7.5 ;
+    :ageRate_70 5.1 ;
+    :areaCode "POI034" ;
+    :asOf "2026-10-28T21:30:00"^^xsd:dateTime ;
+    :attr_area_nm "선릉역" ;
+    :congestionMessage "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요." ;
+    :femaleRate 47.3 ;
+    :hasCongestionLevel "여유" ;
+    :hasForecast true ;
+    :iri "http://k.fc/onto#place_POI034" ;
+    :maleRate 52.7 ;
+    :nonResidentRate 55.4 ;
+    :populationMax 32000 ;
+    :populationMin 30000 ;
+    :replace false ;
+    :residentRate 44.6 .
+
+:place_POI042 a :Place ;
+    rdfs:label "역삼역"@ko ;
+    :ageRate_0 1.4 ;
+    :ageRate_10 4.1 ;
+    :ageRate_20 20.2 ;
+    :ageRate_30 24.7 ;
+    :ageRate_40 22.5 ;
+    :ageRate_50 15.1 ;
+    :ageRate_60 6.9 ;
+    :ageRate_70 5.0 ;
+    :areaCode "POI042" ;
+    :asOf "2026-10-28T21:30:00"^^xsd:dateTime ;
+    :attr_area_nm "역삼역" ;
+    :congestionMessage "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요." ;
+    :femaleRate 46.4 ;
+    :hasCongestionLevel "여유" ;
+    :hasForecast true ;
+    :iri "http://k.fc/onto#place_POI042" ;
+    :maleRate 53.6 ;
+    :nonResidentRate 54.5 ;
+    :populationMax 20000 ;
+    :populationMin 18000 ;
+    :replace false ;
+    :residentRate 45.5 .
+
+:Forecast rdfs:label "Forecast" .
+

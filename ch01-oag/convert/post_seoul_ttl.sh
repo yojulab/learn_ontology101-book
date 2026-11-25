@@ -2,7 +2,7 @@
 # ==============================================================================
 # 서울시 실시간 인구 RDF(Turtle) 데이터 Fuseki 적재 스크립트
 #
-# cURL 명령어로 생성된 TTL 파일(seoul_ppltn.ttl 또는 gangnam.ttl)을
+# cURL 명령어로 생성된 TTL 파일(seoul_ppltn.ttl 또는 compat.ttl)을
 # Apache Jena Fuseki의 데이터셋 Named Graph로 전송(POST/PUT)하고 검증합니다.
 # ==============================================================================
 
@@ -28,13 +28,13 @@ if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
 
 옵션 및 인자:
   --replace, -r  기존 Named Graph를 완전히 대체(PUT 방식)하여 새로 적재
-  TTL_FILE       업로드할 TTL 파일 경로 (기본값: seoul_ppltn.ttl 또는 gangnam.ttl)
-  GRAPH_URI      적재할 Named Graph IRI (기본값: http://k.gangnam/onto 또는 .env 설정값)
+  TTL_FILE       업로드할 TTL 파일 경로 (기본값: seoul_ppltn.ttl 또는 compat.ttl)
+  GRAPH_URI      적재할 Named Graph IRI (기본값: http://k.fc/onto 또는 .env 설정값)
 
 환경변수:
   FUSEKI_URL  Fuseki 서버 주소 (기본값: http://localhost:3030)
   DATASET     Fuseki 데이터셋 이름 (기본값: fc)
-  GRAPH_URI   Named Graph IRI (기본값: http://k.gangnam/onto)
+  GRAPH_URI   Named Graph IRI (기본값: http://k.fc/onto)
 
 예시:
   $0
@@ -75,6 +75,8 @@ if [ $# -ge 1 ] && [ -n "${1:-}" ]; then
 else
   if [ -f "${SCRIPT_DIR}/seoul_ppltn.ttl" ]; then
     TTL_INPUT="${SCRIPT_DIR}/seoul_ppltn.ttl"
+  elif [ -f "${SCRIPT_DIR}/compat.ttl" ]; then
+    TTL_INPUT="${SCRIPT_DIR}/compat.ttl"
   elif [ -f "${SCRIPT_DIR}/gangnam.ttl" ]; then
     TTL_INPUT="${SCRIPT_DIR}/gangnam.ttl"
   else

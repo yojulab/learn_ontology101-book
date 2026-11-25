@@ -18,3 +18,4 @@ run/
 .DS_Store
 .idea/
 .env
+ch01-oag/convert/gangnam.ttl
